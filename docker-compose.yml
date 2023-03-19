@@ -4,13 +4,8 @@ services:
     container_name: my-node-app
     build:
       context: .
-      dockerfile: Dockerfile
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    expose:
-      - "5000"
-    ports:
-      - 127.0.0.1:5000:5000
+      dockerfile: Dockerfile    
+    network_mode: "host"    
     environment:
       NODE_ENV: production
       HOSTNAME: 127.0.0.1
