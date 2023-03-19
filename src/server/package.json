@@ -1,0 +1,31 @@
+{
+  "name": "learn-node-docker-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "NODE_ENV=development tsx watch src/index.ts",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "tsup": "^6.7.0",
+    "tsx": "^3.12.5",
+    "typescript": "^5.0.2"
+  },
+  "tsup": {
+    "entry": [
+      "src",
+      "!src/**/*.spec.*"
+    ],
+    "outDir": "../../dist/server"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "dotenv": "^16.0.3"
+  }
+}

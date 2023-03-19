@@ -6,7 +6,7 @@ docker build -t my-app .
 
 # Instantiating Docker Container
 
-Create a file called `.env.production` inside `config` folder with contents:
+Set these environment variables:
 
 ```
 NODE_ENV=production
@@ -18,12 +18,7 @@ PORT=80
 docker run --rm -d network="host" --name my-app-container --env-file config/.env.production my-app
 ```
 
-Then run
-
-```bash
-# should output 'Hello, World'
-curl http://localhost:80
-```
+Then open `http://localhost:80/` in the browser.
 
 # Using Docker Compose
 
